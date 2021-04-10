@@ -50,6 +50,27 @@ app.post('/',(req,res)=>{
         }
 })
 
+//Create com id automatico
+//lembrar de deixar o id "" no postman!
+app.post('/automatico',(req,res)=>{
+    const prod = req.body
+    
+    const codigos = []
+    for ( i = 0; i< produtos.length; i++){
+        codigos.push(parseInt(produtos[i].id))
+    }
+    var id=101
+    if (codigos.length > 0){
+       id = codigos.reduce(function(a, b) {
+        return Math.max(a, b);
+      }) + 1
+    } 
+    
+    prod.id = id.toString()
+    produtos.push(prod)
+    res.send('Inclusão Concluída com Sucesso')
+    
+})
 
 //Update
 app.put('/:id', (req, res) => {
