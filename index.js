@@ -80,9 +80,12 @@ app.get('/delmensagem',(req,res) => {
 app.get('/remove/:id',(req,res) =>{
     //chega como string transformo em inteiro
     const id = parseInt(req.params.id)
+    //remove a partir do índice 1 elemento
     mensagens.splice(id,1)
     res.render('mensagem',{msg:"Remoção Realizada com Sucesso"})
     })
+
+teste 
 
 
 app.listen(port)
