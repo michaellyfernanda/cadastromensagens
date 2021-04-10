@@ -84,6 +84,6 @@ app.get('/remove/:id',(req,res) =>{
     res.render('mensagem',{msg:"Remoção Realizada com Sucesso"})
     })
 
-    teste
+
 
 app.listen(port)
