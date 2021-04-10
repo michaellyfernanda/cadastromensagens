@@ -1,0 +1,23 @@
+<h1>Mensagens</h1>
+<form action="/altera" method="GET">
+<table>
+<tr>
+<th>Código</th>
+<th>Mensagem</th>
+<th>Alterar</th>
+<!--no json msg é uma lista então #each percorre cada elemento da lista @index obtém o índice do elemento atual-->
+
+{{#each msg}}
+<!--msg é definido no index, each percorre cada mensagem e ja faz a remoção também-->
+
+<tr>
+<td>{{@index}}</td>
+<td>{{this}}</td>
+<td><a href="/remove/{{@index}}">
+    <img scr="img/botaox.jpg"></a></td>
+</tr>
+
+{{/each}}
+
+</table>
+</form>
